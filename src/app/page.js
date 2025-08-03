@@ -7,8 +7,7 @@ export default function Home() {
 	return (
 		<div className={styles.page}>
 			<main className={styles.main}>
-				<div className={styles.hero}>
-					<h1>Claudia Church Yoga</h1>
+				<div className={styles.headerTop}>
 					<nav className={styles.nav}>
 						<a>Classes in Somerset</a>
 						<a>Private Classes</a>
@@ -16,28 +15,40 @@ export default function Home() {
 						<a>Contact</a>
 					</nav>
 				</div>
+				<div className={styles.hero}>
+					<div className={styles.aboutTextDiv}>
+						<h1>Claudia Church Yoga</h1>
+						<p>
+							My classes are focused on the concept of space - in the body, the
+							mind, and the world around us. I focus on slow, strong movement to
+							release tension and build resilience, particularly in areas where
+							stress often accumulates like the neck and hips.
+						</p>
+
+						<p>
+							Yoga has been a tool for me to feel more present and lighter, both
+							physically and mentally. My teaching is shaped by that experience,
+							offering students a space to connect with themselves in a
+							supportive way. I'm inspired by nature, and whenever possible, I
+							practice outdoors. I find stillness in the natural rhythms of the
+							environment, and aim to bring that sense of ease into class.
+						</p>
+
+						<div className={styles.textDivider}>✦</div>
+						<div className={styles.heroCTA}>
+							<button>Upcoming Classes</button>
+							<button>Get in Touch</button>
+						</div>
+					</div>
+					<div className={styles.imageDiv}>
+						<img src="/main.png"></img>
+					</div>
+				</div>
 				<p className={styles.subheader}>Yoga for Space, Strength & Stillness</p>
 				<div className={styles.about}>
-					<div className={styles.imageDiv}>
+					{/* <div className={styles.imageDiv}>
 						<img src="/main.jpg"></img>
-					</div>
-					<div className={styles.aboutTextDiv}>
-						<h1>About Me:</h1>
-						<p>
-							I’m a 200hr certified Hatha Yoga teacher, and my classes are
-							grounded in creating space - in the body, the mind, and the world
-							around us. I focus on slow, strong movement to help release
-							tension and build resilience, particularly in areas where stress
-							often accumulates like the neck and hips. Yoga has been a tool for
-							me to feel more present and lighter, both physically and mentally.
-							My teaching is shaped by that experience, offering students a
-							space to connect with themselves in a real and supportive way. I'm
-							deeply inspired by nature, and whenever possible, I practice
-							outdoors. I find stillness in the natural sounds and rhythms of
-							the environment, and aim to bring that sense of ease into each
-							class.{" "}
-						</p>
-					</div>
+					</div> */}
 				</div>
 
 				<div className={styles.upcomingDiv}>
