@@ -208,6 +208,17 @@ a.secondary {
 	opacity: 0.4;
 }
 
+@media (max-width: 768px) {
+
+  .headerTop {
+    padding: 1.2rem;
+  }
+
+  .desktopMenu {
+    font-size: 1rem;
+  }
+}
+
 /* Only to be used when nav expands in future*/
 /* .hamburger {
 	font-size: 2rem;
