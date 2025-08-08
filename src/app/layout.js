@@ -1,10 +1,14 @@
 import { Cormorant_Garamond, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+
 const cormorantGaramond = Cormorant_Garamond({
 	variable: "--font-comorant-garamond",
 	subsets: ["latin"],
-	weight: "300",
+	weight: "400",
 });
 
 const inter = Inter({

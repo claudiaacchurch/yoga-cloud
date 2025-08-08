@@ -13,6 +13,7 @@
   min-height: 100svh;
   font-family: var(--font-inter);
   background-color: var(--cloud-white);
+  overflow-x: hidden;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -55,6 +56,7 @@
 
 .main h1 {
   font-family: var(--font-comorant-garamond);
+  font-size: 2.5rem;
 }
 
 .ctas {
@@ -127,11 +129,6 @@ a.secondary {
 }
 
 @media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
-
   .main {
     align-items: center;
   }
@@ -177,36 +174,73 @@ a.secondary {
     gap: 1rem;
     background: #AABFA7;
     z-index: 1;
-}
-
-.nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  gap: 2rem;
-  font-family: var(--font-comorant-garamond);
-  font-size: 1.3rem;
+    width: 100%;
 }
 
 
-.nav a {
-  color: black;
-  cursor: pointer;
+.navContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2rem;
+    font-family: var(--font-comorant-garamond);
+    font-size: 1.3rem;
 }
 
-.nav a:hover {
+.desktopMenu {
+	display: flex;
+	gap: 2rem;
+	font-size: 1.2rem;
+}
+
+.desktopMenu a {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.desktopMenu a:hover {
   opacity: 0.3;
   transition: all 0.2s ease-in-out;
 }
+
+.desktopMenu a:hover {
+	opacity: 0.4;
+}
+
+/* Only to be used when nav expands in future*/
+/* .hamburger {
+	font-size: 2rem;
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: black;
+}
+
+.mobileMenu {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	background: #e3eae0;
+	padding: 1rem 2rem;
+	border-radius: 0 0 10px 10px;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.mobileMenu a {
+	padding: 0.5rem 0;
+	color: black;
+	text-decoration: none;
+} */
 
 /* Hero */
 
 .hero {
   display: flex;
   flex-direction: row;
-  gap: 5rem;
   justify-content: center;
-  /* padding: 0 5rem; */
   background: #EDE7DD;
 }
 
@@ -215,10 +249,11 @@ a.secondary {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  padding: 3rem;
+  gap: 1.5rem;
   color: black;
   line-height: 1.8;
+  padding-top : 2rem;
+  padding-bottom: 1rem;
 }
 
 .aboutTextDiv p {
@@ -228,6 +263,7 @@ a.secondary {
 .hero h1 {
   font-size: 4rem;
   text-align: center;
+  margin: 0;
 }
 
 .textDivider {
@@ -242,7 +278,7 @@ a.secondary {
   flex-direction: row;
   gap: 3rem;
   width: 100%;
-  padding: 0 3.5rem;
+  padding: 1rem 3.5rem;
 }
 
 .heroCTA button {
@@ -256,11 +292,7 @@ a.secondary {
   cursor: pointer;
   color: #334c34;
 }
-/* 
-.heroCTA button:first-child {
-  background: #6E8C6D;
-  color: #EDE7DD;
-} */
+
 .heroCTA button:hover {
   opacity: 0.3;
   transition: all 0.2s ease-in-out;
@@ -295,43 +327,60 @@ a.secondary {
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    padding: 1rem;
+  }
 
+  .aboutTextDiv,
+  .imageDiv {
+    width: 100%;
+  }
 
+  .aboutTextDiv {
+    gap: 1rem;
+    padding: 1rem;
+    text-align: center;
+  }
 
+  .aboutTextDiv p {
+    padding: 0;
+  }
 
+  .hero h1 {
+    font-size: 2.5rem;
+  }
 
+  .textDivider {
+    font-size: 1rem;
+  }
 
+  .heroCTA {
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
 
-.about {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 5rem;
-  margin: 3rem;
+  .imageDiv {
+    justify-content: center;
+  }
+
+  .imageDiv::after {
+    background: linear-gradient(to top, rgba(249, 247, 242, 0.4) 0%, transparent 40%);
+  }
+
+  .hero img {
+    width: 100%;
+    height: auto;
+  }
 }
 
-/* .imageDiv {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-} */
-
-.imageDiv .about img {
-  height: auto;
-  object-fit: cover;
-  border-radius: 12px;
-  max-height: 400px;
-  min-width: 400px;
-}
-
-.about p {
-  line-height: 1.8;
-  margin-right: 5rem;
-}
+/* Upcoming Classes & Events */
 
 .upcomingDiv {
-  padding: 0 50px;
+  padding: 5rem;
 }
 
 .upcomingClasses {
@@ -344,15 +393,138 @@ a.secondary {
   margin-bottom: 1.5rem;
 }
 
-.upcomingClasses img {
-  height: auto;
-  object-fit: cover;
-  border-radius: 12px;
-  max-height: 450px;
+/* Class Card Component */
+
+.classCard {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  margin: 2rem 0;
+  max-width: 800px;
+  width: 100%;
+  font-family: var(--font-inter);
+  font-size: 0.8rem;
+  align-items: stretch;
+  min-height: 340px;
+  background: linear-gradient(135deg, #d8e6e9 0%, #eaf2f4 100%);
 }
 
-.containerOfferings {
+.classImg {
+  overflow: hidden;
+  padding: 2rem;
+  flex: 1 1 50%;
+  position: relative;
+}
+
+.classImg img {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+.classInfo {
+  flex: 1 1 50%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;            
+  justify-content: space-between;
+}
+
+.classInfo h3 {
+  font-size: 2rem;
+  color: #3c5360;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-family: var(--font-comorant-garamond);
+}
+
+.classDate {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  flex-wrap: nowrap;
+  gap: 0.2rem;
+  color: #a4512a;
+  font-weight: bold;
+}
+
+
+.classLocation,
+.classDescription {
+  line-height: 1.8;
+}
+
+.classInfo a {
+  color: #2e6443;
+  text-decoration: underline;
+}
+
+.classNote {
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.classCard button {
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: #5f7e91;
+}
+
+.classCard button:hover {
+  opacity: 0.3;
+  transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+
+  .upcomingDiv {
+    padding: 3rem;
+  }
+
+  .classCard {
+    flex-direction: column; 
+    min-height: unset;
+  }
+
+  .classImg {
+    flex: none;
+    width: 100%;
+    aspect-ratio: 16 / 9;    
+    padding: 0;
+  }
+
+  .classImg img {
+    height: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 0;
+  }
+
+  .classInfo {
+    flex: none;
+    width: 100%;
+    padding: 1.25rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .classInfo h3 {
+    font-size: 1.8rem;
+  }
+
+  .classCard button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .classInfo {
+    padding: 1rem;
+  }
 }

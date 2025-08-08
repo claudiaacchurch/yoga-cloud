@@ -1,132 +1,49 @@
-export default function YogaPoster({
-	title,
-	date,
-	time,
-	location,
-	description,
-	whatsapp,
-	cost,
-	note,
-	image,
-}) {
-	return (
-		<div
-			style={{
-				maxWidth: "900px",
-				display: "flex",
-				flexDirection: "row",
-				background: "#B4C4B3",
-				borderRadius: "16px",
-				overflow: "hidden",
-				boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)",
-				fontFamily: `'Inter', sans-serif`,
-				fontSize: "12px",
-			}}
-		>
-			<div
-				style={{
-					flex: 1,
-					padding: "1rem",
-					display: "flex",
-					flexDirection: "column",
-					justifyContent: "center",
-					alignItems: "center",
-				}}
-			>
-				<h2
-					style={{
-						fontFamily: `'Cormorant Garamond', sans-serif`,
-						textAlign: "center",
-						fontSize: "1.5rem",
-						marginBottom: "1.5rem",
-						color: "#2E2E2E",
-					}}
-				>
-					{title}
-				</h2>
+import React from "react";
+import styles from "../src/app/page.module.css";
+import { faCalendar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+const ClassCard = ({
+	title = "1-Hour Beginner-Friendly Hatha Yoga Class",
+	date = "Sunday 27th July, 6–7pm",
+	location = "West Quantoxhead, TA4 4DP",
+	description = "Gentle body openers to gradually release tension and slow the mind. Includes some slower-paced dynamic flows.",
+	whatsapp = "+44 7984 641632",
+	paypalLink = "#",
+	cost = "£5",
+	note = "Please bring your own yoga mat (optional block & strap)",
+	imageSrc = "/path-to-your-image.jpg",
+	imageAlt = "Yoga class image",
+}) => {
+	return (
+		<div className={styles.classCard}>
+			<div className={styles.classImg}>
+				<img src={imageSrc} alt={imageAlt} />
+			</div>
+			<div className={styles.classInfo}>
+				<h3>
+					<strong>{title}</strong>
+				</h3>
+				<p className={styles.classDate}>
+					<div>
+						<FontAwesomeIcon icon={faCalendar} />
+					</div>{" "}
+					{date}
+				</p>
+				<p className={styles.classLocation}>📍 {location}</p>
+				<p className={styles.classDescription}>{description}</p>
 				<p>
-					<strong>
-						{date}, {time}
-					</strong>
-				</p>
-				<div
-					style={{
-						margin: "0.5rem 0",
-						textAlign: "center",
-						fontSize: "1.5rem",
-					}}
-				>
-					✧
-				</div>
-				<p>
-					<strong>{location}</strong>
-				</p>
-				<div
-					style={{
-						margin: "0.5rem 0",
-						textAlign: "center",
-						fontSize: "1.5rem",
-					}}
-				>
-					✧
-				</div>
-				<p
-					style={{
-						paddingBottom: "1rem",
-						lineHeight: "1.5",
-						textAlign: "center",
-					}}
-				>
-					{description}
-				</p>
-				<p
-					style={{
-						paddingBottom: "1rem",
-					}}
-				>
-					<strong>WhatsApp:</strong>{" "}
-					<a
-						style={{
-							textDecoration: "underline",
-							cursor: "pointer",
-						}}
-						href="#"
-					>
-						{whatsapp}
-					</a>{" "}
-				</p>
-				<p
-					style={{
-						paddingBottom: "1rem",
-					}}
-				>
-					<strong>Cost {cost}:</strong>{" "}
-					<a
-						style={{
-							textDecoration: "underline",
-							cursor: "pointer",
-						}}
-						href="#"
-					>
+					<strong>Cost: {cost}</strong> (
+					<a href={paypalLink} target="_blank" rel="noopener noreferrer">
 						PayPal
 					</a>{" "}
-					or cash
+					or cash)
 				</p>
-				<p>
-					<strong>{note}</strong>
-				</p>
+				<p className={styles.classNote}>{note}</p>
+				<button>Book Now</button>
 			</div>
-			<div
-				style={{
-					flex: 1,
-					backgroundImage: `url(${image})`,
-					backgroundRepeat: "no-repeat",
-					backgroundPosition: "center center",
-					backgroundSize: "cover",
-					borderRadius: "0 16px 16px 0",
-				}}
-			/>
 		</div>
 	);
-}
+};
+
+export default ClassCard;
