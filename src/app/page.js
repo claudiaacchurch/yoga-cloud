@@ -58,7 +58,7 @@ export default function Home() {
 						</p>
 					</div>
 					<div className={styles.imageDiv}>
-						<img src="/main.png"></img>
+						<img src="../../public/main.png"></img>
 					</div>
 				</div>
 
@@ -82,8 +82,6 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-
-				
 			</main>
 			<footer className={styles.footer}>
 				<a
