@@ -58,7 +58,7 @@ export default function Home() {
 						</p>
 					</div>
 					<div className={styles.imageDiv}>
-						<img src="../../public/main.png"></img>
+						<img src="main.png"></img>
 					</div>
 				</div>
 
@@ -76,7 +76,7 @@ export default function Home() {
 								paypalLink="https://paypal.me/claudiayoga"
 								cost="£5"
 								note=" * Please bring a yoga mat (optional strap & block)"
-								imageSrc="/2709.jpg"
+								imageSrc="2709.jpg"
 								imageAlt="Gentle Yoga"
 							/>
 						</div>
