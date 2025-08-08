@@ -5,6 +5,8 @@ import ClassCard from "../../public/poster-template";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+/* eslint-disable react/no-unescaped-entities */
+
 export default function Home() {
 	return (
 		<div className={styles.page}>
