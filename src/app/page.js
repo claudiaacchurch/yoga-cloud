@@ -58,7 +58,7 @@ export default function Home() {
 						</p>
 					</div>
 					<div className={styles.imageDiv}>
-						<img src="main.png"></img>
+						<img src="main.png" alt="main img"/>
 					</div>
 				</div>
 
