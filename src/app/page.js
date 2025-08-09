@@ -16,9 +16,9 @@ export default function Home() {
 						<nav className={styles.desktopMenu}>
 							<a href="#classes">Class Schedule</a>
 							<a href="#contact">Contact</a>
-							<div>
+							{/* <div>
 								<FontAwesomeIcon icon={faFacebook} />
-							</div>
+							</div> */}
 						</nav>
 					</div>
 				</div>

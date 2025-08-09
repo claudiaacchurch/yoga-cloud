@@ -373,6 +373,7 @@ a.secondary {
     flex-direction: column;
     padding: 1rem 0;
     gap: 1rem;
+    align-items: center;
   }
 
   .heroCTA button {
@@ -508,6 +509,10 @@ a.secondary {
 
   .upcomingDiv h1 {
     font-size: 2rem;
+  }
+
+  .upcomingDiv p {
+    font-size: 14px;
   }
 
   .classCard {
