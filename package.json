@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "next dev",
     "build": "next build",
-    "export": "next export -o docs",
-    "deploy": "npm run build && npm run export && touch docs/.nojekyll"
+    "deploy": "npm run build && rm -rf docs && cp -R out docs && touch docs/.nojekyll && git add docs && git commit -m 'update site' && git push"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.2.9",
