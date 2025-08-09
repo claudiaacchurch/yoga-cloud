@@ -24,12 +24,10 @@ const ClassCard = ({
 				<h3>
 					<strong>{title}</strong>
 				</h3>
-				<p className={styles.classDate}>
-					<div>
-						<FontAwesomeIcon icon={faCalendar} />
-					</div>{" "}
-					{date}
-				</p>
+				<div className={styles.classDate}>
+					<FontAwesomeIcon icon={faCalendar} />
+					<p>{date}</p>
+				</div>
 				<p className={styles.classLocation}>📍 {location}</p>
 				<p className={styles.classDescription}>{description}</p>
 				<p>
