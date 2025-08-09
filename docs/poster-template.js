@@ -25,8 +25,7 @@ const ClassCard = ({
 					<strong>{title}</strong>
 				</h3>
 				<div className={styles.classDate}>
-					<FontAwesomeIcon icon={faCalendar} />
-					<p>{date}</p>
+					<p> <FontAwesomeIcon icon={faCalendar} />{date}</p>
 				</div>
 				<p className={styles.classLocation}>📍 {location}</p>
 				<p className={styles.classDescription}>{description}</p>
