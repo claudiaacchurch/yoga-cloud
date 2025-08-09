@@ -69,7 +69,7 @@ export default function Home() {
 						<div>
 							<ClassCard
 								title="Gentle Midweek Reset"
-								date="Wednesday 28th August, 6:30–7:30pm"
+								date=" Wednesday 28th August, 6:30–7:30pm"
 								location="St Audries Village Hall, West Quantoxhead, TA4 4DP"
 								description="Unwind midweek with a grounding yoga flow and leave feeling lighter"
 								whatsapp="+44 7984641632"
